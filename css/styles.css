@@ -1,0 +1,299 @@
+/*Colores:
+Fondo general: #fbfbfb
+Fondo botón y footer: #af599e
+Fondo de “Hablemos…” en sección contacto:
+rgba(175, 89, 158, 0.3) Textos: #0f0f0f
+Texto botón y footer: #fbfbfb
+
+● Tamaños de texto:
+Tamaño de texto general: 18px
+Tamaño texto botón: 20px
+Título principal: 36px
+Títulos secundarios: 28px
+
+● Interlineado 1.2
+● Deben aplicar flexbox para alinear y distribuir los elementos.
+● Tamaños y espaciados:
+No vamos a exigir un resultado exactamente igual a la imagen dada de
+referencia, pero dejamos algunas indicaciones:
+● Alto del header y del footer: 90px (el header debería quedar fijo a
+la parte superior de la ventana al scrollear)
+● Las secciones deben ocupar la totalidad del alto de la pantalla.
+Para eso pueden aplicarles un min-height: 100vh;
+● Espaciado Párrafos: 20px arriba y debajo de cada párrafo
+● Foto de presentación: ancho 400p */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background: #fbfbfb;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/***********************HEADER*********************/
+
+.container-header{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:solid 5px rgba(0, 0, 0, 0.1);
+    background-color: #fbfbfb;
+    border-bottom-style: ridge;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+nav{
+    display: flex;
+    margin-left: -10px;
+}
+
+.container-header a{
+    background-color: #fbfbfb;
+    padding: 30px;
+    text-align: center;
+}
+
+.container-header a:hover{
+    background-color: rgb(226, 157, 27);
+    color: #fbfbfb;
+    
+}
+.container-header a:active {
+    background-color: #6e888b;
+    box-shadow: 0 5px #666;
+    transform: translateY(3px);
+    transition: 0.5s;
+}
+
+.active{
+    color: blueviolet;
+}
+.logo{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 70px;
+}
+
+.presentacion{
+    max-width: 100%;
+    height: 80%;
+    display: flex;
+
+}
+.container-foto{
+    display: flex;
+    position: relative;
+}
+.foto-perfil{
+    padding: 25px 25px;
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+
+/***********************MAIN*********************/
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+main {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+p{
+    /* display: flex; */
+    height: 60px;
+    text-align: center;
+}
+
+article{
+   flex-direction: column;
+   height: max-content;
+}
+
+article{
+   flex-direction: column;
+   height: max-content;
+}
+
+.descarga-cv{
+    text-align: center;
+    font-size: 20px;
+    width: 60px;
+    padding: 20px;
+    background-color:rgb(226, 157, 27);
+    color:#fbfbfb;
+    border-radius: 50px;
+}
+
+.descarga-cv:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    transition: 0.7s;
+  }
+
+
+section{
+    height: max-content;
+    display: block;
+    justify-content: center;
+    margin: 100px 0px 50px 0px;
+    color: #0f0f0f;
+    padding-bottom: 4%;
+    background-color:rgba(226, 157, 27, 0.3);
+}
+
+h2{
+    align-items: end;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+section p{
+    margin-top: 10px;
+    height: 60px;
+}
+
+.container-iconos{
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.container-iconos img{
+    width: 70px;
+    margin: 20px;
+}
+
+.container-iconos img:hover{
+    background-color: rgb(255, 131, 42);
+}
+
+/*********************FOOTER***********************/
+
+footer{
+    justify-content: center;
+    height: 90px;
+    background-color: rgb(226, 157, 27);
+}
+
+.footer-info{
+    color: #fbfbfb;
+    display: flex;
+    align-items: center;
+    border-bottom: 20px;
+}
+
+@media(max-width: 358px) {
+
+    .logo{
+        margin-top: 10px;
+        margin-left: 3px;
+        margin-right: 7px;
+        height: 60px;
+    }
+   
+    article{
+        margin: 380px 0;
+        display: flex;
+        position: absolute;
+        margin-bottom: 10%;
+     }
+     .container-foto{
+        display: flex;
+        justify-content:center;
+    }
+
+    .descarga-cv{
+        max-width: min-content;
+        text-align: justify;
+        font-size: 16px;
+        margin-left: 100px;
+        padding: 18px 100px;
+        background:rgb(226, 157, 27);
+        color:#fbfbfb;
+    }
+    
+    .descarga-cv:hover{
+        font-size: 10px;
+    }
+
+    section{
+        height: max-content;
+        align-items: center;
+        justify-content: center;
+        margin: 400px 0px 0px 0px;
+        color: #0f0f0f;
+        padding-bottom: 15%;
+        background-color:rgba(175, 89, 158, 0.3);
+    }
+    section p{
+        margin-top: 20px;
+        height: 20px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .container-header a{
+        background-color: #fbfbfb;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .container-header a:hover{
+        background-color: rgb(226, 157, 27);
+       
+    }
+}
+
+
+
+/*********************MEDIA QUERYS***********************/
+
+
+/* Recomendaciones! 
+*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
+*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
+*
+*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
+*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
+*
+*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
+*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
+*
+*  - Usen mucho las herramientas para desarrolladores del navegador para ir
+*    probando el CSS que escriben, resolver dudas y problemas.
+*
+*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
+*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
+*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
+*/

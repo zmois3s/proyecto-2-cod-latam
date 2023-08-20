@@ -71,18 +71,14 @@ nav{
 .container-header a:hover{
     background-color: rgb(226, 157, 27);
     color: #fbfbfb;
-    
+   
 }
 .container-header a:active {
     background-color: #6e888b;
     box-shadow: 0 5px #666;
     transform: translateY(3px);
     transition: 0.5s;
-}
-
-.active{
-    color: blueviolet;
-}
+  }
 .logo{
     margin-top: 10px;
     margin-left: 10px;
@@ -209,7 +205,7 @@ footer{
     border-bottom: 20px;
 }
 
-@media(max-width: 358px) {
+@media(max-width: 474px) {
 
     .logo{
         margin-top: 10px;
@@ -230,13 +226,15 @@ footer{
     }
 
     .descarga-cv{
-        max-width: min-content;
-        text-align: justify;
-        font-size: 16px;
-        margin-left: 100px;
-        padding: 18px 100px;
-        background:rgb(226, 157, 27);
+        justify-content: center;
+        text-align: center;
+        font-size: 0.8em;
+        width: 60px;
+        padding: 8px 80px;
+        background-color:rgb(226, 157, 27);
         color:#fbfbfb;
+        border-bottom: 30%;
+        
     }
     
     .descarga-cv:hover{
